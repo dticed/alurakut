@@ -13,7 +13,7 @@ function ProfileSideBar(propriedades) {
 
 export default function Home() {
   const usuarioAleatorio = 'dticed';
-  const pessoasFavoritas = ['rochacbruno', 'davidbegin', 'iankury', 'dunossauro', 'ramalho', 'guilhermesilveira'];
+  const pessoasFavoritas = ['rochacbruno', 'davidbegin', 'iankury', 'dunossauro', 'ramalho', 'marcobrunodev'];
   return (
     <>
       <AlurakutMenu />
