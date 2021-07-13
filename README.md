@@ -6,4 +6,4 @@
 
 ## Live Code
 
-[(https://vercel.com/button)](https://alurakut-dticed.vercel.app/)
+[Live Code](https://alurakut-dticed.vercel.app/)
