@@ -18,7 +18,7 @@
     <img src="https://img.icons8.com/color/240/000000/react-native.png" alt="react" width="30px">
   </a>
   <a href="https://nextjs.org/">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftkssharma.com%2Fnextjs-serverside-handbook-for-developers%2F&psig=AOvVaw2IDsl0VDzu-ibeXzxVNe-n&ust=1626292885687000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCKDDwKPr4PECFQAAAAAdAAAAABAD" alt="nextjs" width="30px">
+    <img src="https://camo.githubusercontent.com/8660df2110ee913ff739e173b9d00871d8f8eb1bf7596e22c64d62bfae7e2b5a/68747470733a2f2f7777772e6f6e67726170682e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031382f30322f6e6578746a735f69636f6e2e706e67" alt="nextjs" width="30px">
   </a>
   <a href="https://styled-components.com/">
     <img src="https://user-images.githubusercontent.com/11221061/125516577-c765fd2e-d299-40d6-9883-4711c46ede23.png" alt="styled components" width="30px">
