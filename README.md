@@ -10,7 +10,7 @@
 - NEXTJS
 - NATIVE COMPONENTS
 
-<div align="left">
+<div align="center">
   <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Introduction">
     <img src="https://img.icons8.com/color/240/000000/javascript.png" alt="javascript" width="30px">
   </a>
