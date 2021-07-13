@@ -18,7 +18,7 @@
     <img src="https://img.icons8.com/color/240/000000/react-native.png" alt="react" width="30px">
   </a>
   <a href="https://nextjs.org/">
-    <img src="https://seeklogo.com/images/N/next-js-logo-7929BCD36F-seeklogo.com.png" alt="react" width="30px">
+    <img src="https://user-images.githubusercontent.com/324440/84087760-bbff5f80-a9e2-11ea-8aeb-db605876d9cf.png" alt="react" width="30px">
   </a>
   <a href="https://styled-components.com/">
     <img src="https://user-images.githubusercontent.com/11221061/125516577-c765fd2e-d299-40d6-9883-4711c46ede23.png" alt="react" width="30px">
