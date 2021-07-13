@@ -5,7 +5,11 @@
 ## Projeto realizado na Imersão React da Alura
 
 ## Tecnologias
-
+- HTML5
+- CSS
+- REACT
+- NEXTJS
+- NATIVE COMPONENTS
 
 ## Projeto
 :point_right:  [Live code](https://alurakut-dticed.vercel.app/)
