@@ -2,7 +2,7 @@
   <img src="http://alurakut.vercel.app//logo.svg" alt="Alurakut logo" width="180px">
 </div>
 
-## Preview
+## Projeto realizado na Imersão React da Alura
 
 Preview the example live on [StackBlitz](http://stackblitz.com/):
 
