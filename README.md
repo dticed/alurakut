@@ -8,9 +8,9 @@
 - HTML5
 - CSS
 - REACT
-- <a href="https://reactjs.org/">
-    <img src="https://img.icons8.com/color/240/000000/react-native.png" alt="react" width="30px">
-  </a>
+<a href="https://reactjs.org/">
+  <img src="https://img.icons8.com/color/240/000000/react-native.png" alt="react" width="30px">
+</a>
 - NEXTJS
 - NATIVE COMPONENTS
 
