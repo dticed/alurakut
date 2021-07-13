@@ -6,9 +6,9 @@
 
 ## Tecnologias
 - JavaScript
-- REACT
-- NEXTJS
-- NATIVE COMPONENTS
+- React
+- NextJs
+- Native Components
 
 <div align="left">
   <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Introduction">
