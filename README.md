@@ -1,5 +1,4 @@
-https://img.shields.io/badge/author-dticed-brightgreen
-<img src="https://img.shields.io/badge/author-dticed-brightgreen" alt="Teste" width="180px">
+[![Author](https://img.shields.io/badge/author-dticed-brightgreen?style=flat-square)](https://github.com/dticed)
 
 <div align="left">
   <img src="http://alurakut.vercel.app//logo.svg" alt="Alurakut logo" width="180px">
