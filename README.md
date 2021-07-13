@@ -10,7 +10,7 @@
 - NEXTJS
 - NATIVE COMPONENTS
 
-- <div align="left">
+<div align="left">
   <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Introduction">
     <img src="https://img.icons8.com/color/240/000000/javascript.png" alt="javascript" width="30px">
   </a>
@@ -23,7 +23,6 @@
   <a href="https://styled-components.com/">
     <img src="https://user-images.githubusercontent.com/11221061/125516577-c765fd2e-d299-40d6-9883-4711c46ede23.png" alt="styled components" width="30px">
   </a>
-  
 </div>
 
 ## Projeto
