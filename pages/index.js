@@ -63,7 +63,6 @@ export default function Home() {
     'ramalho',
     'marcobrunodev'
   ];
-
   return (
     <>
       <AlurakutMenu />
