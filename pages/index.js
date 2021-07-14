@@ -22,11 +22,39 @@ function ProfileSideBar(propriedades) {
 
 export default function Home() {
   const usuarioAleatorio = 'dticed';
-  const [comunidades, setComunidades] = React.useState([{
-    id: '129312387162939718263981',
-    title: 'Eu odeio acordar cedo',
-    image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
-  }]);
+  const [comunidades, setComunidades] = React.useState([
+    {
+      id: '129312387162939718263981',
+      title: 'Eu odeio acordar cedo',
+      image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
+    },
+    {
+      id: '1293123871151562939711238263981',
+      title: 'Fans do ator Leonardo Da Vinci',
+      image: 'https://exame.com/wp-content/uploads/2021/04/dicaprio.jpg'
+    },
+    {
+      id: '129312387162932319741418263981',
+      title: 'Tocava a campainha e corria',
+      image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsantil.cdn.plataformaneo.com.br%2Fproduto%2F1629507PRM112_318447513.jpg&f=1&nofb=1'
+    },
+    {
+      id: '12931112387162939741418263981',
+      title: 'Eu nunca morri na minha vida',
+      image: 'https://4.bp.blogspot.com/-3QU3vRUIhOA/UcGQ5DhqoVI/AAAAAAABSxA/SMDQEmUYG7g/s1600/sepultura.jpg'
+    },
+    {
+      id: '12931112387162939741418263981',
+      title: 'Eu tomo banho pelado',
+      image: 'https://latina.com.br/wp-content/uploads/2017/05/por-que-evitar-banho-nos-horarios-de-pico.jpg'
+    },
+    {
+      id: '12931112387162939741418263981',
+      title: 'Frio e calculista',
+      image: 'https://imagens1.ne10.uol.com.br/blogsne10/social1/uploads/2021/05/Ramon-Valdes-como-Seu-Madruga-em-Chaves.jpg'
+    }
+
+  ]);
   const pessoasFavoritas = [
     'rochacbruno',
     'davidbegin',
@@ -35,6 +63,7 @@ export default function Home() {
     'ramalho',
     'marcobrunodev'
   ];
+
   return (
     <>
       <AlurakutMenu />
@@ -47,6 +76,7 @@ export default function Home() {
             <h1 className="title">
               Bem vindo(a)
             </h1>
+
             <OrkutNostalgicIconSet />
           </Box>
           <Box>
@@ -85,12 +115,13 @@ export default function Home() {
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
           <ProfileRelationsBoxWrapper>
+            <h2 className="smallTitle">Comunidades({comunidades.length})</h2>
             <ul>
               {comunidades.map((itemAtual) => {
                 return (
                   <li key={itemAtual.id}>
                     <a href={`/users/${itemAtual.title}`}>
-                      <img src={ itemAtual.image } />
+                      <img src={itemAtual.image} />
                       <span>{itemAtual.title}</span>
                     </a>
                   </li>
@@ -99,7 +130,7 @@ export default function Home() {
             </ul>
           </ProfileRelationsBoxWrapper>
           <ProfileRelationsBoxWrapper>
-            <h2>
+            <h2 className="smallTitle">
               Pessoas da comunidades({pessoasFavoritas.length})
             </h2>
 
