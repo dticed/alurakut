@@ -1,8 +1,9 @@
+import React from 'react'
 import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
 import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons'
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations'
-import React from 'react'
+
 
 function ProfileSideBar(propriedades) {
   return (
@@ -42,39 +43,7 @@ function ProfileRelationsBox(propriedades) {
 
 export default function Home() {
   const usuarioAleatorio = 'dticed';
-  const [comunidades, setComunidades] = React.useState([
-    {
-      id: '129312387162939718263981',
-      title: 'Eu odeio acordar cedo',
-      image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
-    },
-    {
-      id: '1293123871151562939711238263981',
-      title: 'Fans do ator Leonardo Da Vinci',
-      image: 'https://exame.com/wp-content/uploads/2021/04/dicaprio.jpg'
-    },
-    {
-      id: '129312387162932319741418263981',
-      title: 'Tocava a campainha e corria',
-      image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsantil.cdn.plataformaneo.com.br%2Fproduto%2F1629507PRM112_318447513.jpg&f=1&nofb=1'
-    },
-    {
-      id: '12931112387162939741418263981',
-      title: 'Eu nunca morri na minha vida',
-      image: 'https://4.bp.blogspot.com/-3QU3vRUIhOA/UcGQ5DhqoVI/AAAAAAABSxA/SMDQEmUYG7g/s1600/sepultura.jpg'
-    },
-    {
-      id: '12931112387162939741418263981',
-      title: 'Eu tomo banho pelado',
-      image: 'https://latina.com.br/wp-content/uploads/2017/05/por-que-evitar-banho-nos-horarios-de-pico.jpg'
-    },
-    {
-      id: '12931112387162939741418263981',
-      title: 'Frio e calculista',
-      image: 'https://imagens1.ne10.uol.com.br/blogsne10/social1/uploads/2021/05/Ramon-Valdes-como-Seu-Madruga-em-Chaves.jpg'
-    }
-
-  ]);
+  const [comunidades, setComunidades] = React.useState([]);
   const pessoasFavoritas = [
     'rochacbruno',
     'davidbegin',
@@ -85,13 +54,37 @@ export default function Home() {
   ];
 
   const [seguidores, setSeguidores] = React.useState([]);
-  React.useEffect(function() {
+  React.useEffect(function () {
     fetch('https://api.github.com/users/dticed/followers')
       .then(function (respostaDoServidor) {
         return respostaDoServidor.json();
       })
       .then(function (respostaCompleta) {
         setSeguidores(respostaCompleta);
+      })
+
+    // API GraphQL
+    fetch('https://graphql.datocms.com/', {
+      method: 'POST',
+      headers: {
+        'Authorization': '1d684c35522ed9c22f87b8e60ca429',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        "query": `query {
+        allCommunities{
+          title
+          id
+          imageUrl
+          creatorSlug
+        }
+      }`  })
+    })
+      .then((response) => response.json())
+      .then((respostaCompleta) => {
+        const comunidadesDato = respostaCompleta.data.allCommunities;
+        setComunidades(comunidadesDato)
       })
   }, [])
 
@@ -117,13 +110,27 @@ export default function Home() {
               const dadosDoForm = new FormData(e.target);
 
               const comunidade = {
-                id: new Date().toISOString(),
                 title: dadosDoForm.get('title'),
-                image: dadosDoForm.get('image'),
+                imageUrl: dadosDoForm.get('image'),
+                creatorSlug: usuarioAleatorio,
               }
 
-              const comunidadesAtualizadas = [...comunidades, comunidade];
-              setComunidades(comunidadesAtualizadas);
+              fetch('/api/comunidades', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+
+                },
+                body: JSON.stringify(comunidade)
+              })
+                .then(async (response) => {
+                  const dados = await response.json();
+                  const comunidade = dados.registroCriado;
+                  const comunidadesAtualizadas = [...comunidades, comunidade];
+                  setComunidades(comunidadesAtualizadas);
+                })
+
+
             }}>
               <div>
                 <input placeholder="Qual vai ser o nome da sua comunidade?"
@@ -153,7 +160,7 @@ export default function Home() {
               {pessoasFavoritas.map((itemAtual) => {
                 return (
                   <li key={itemAtual}>
-                    <a href={`/users/${itemAtual}`}>
+                    <a href={`https://github.com/${itemAtual}`}>
                       <img src={`https://github.com/${itemAtual}.png`} />
                       <span>{itemAtual}</span>
                     </a>
@@ -169,8 +176,8 @@ export default function Home() {
               {comunidades.map((itemAtual) => {
                 return (
                   <li key={itemAtual.id}>
-                    <a href={`/users/${itemAtual.title}`}>
-                      <img src={itemAtual.image} />
+                    <a href={`/communities/${itemAtual.title}`}>
+                      <img src={itemAtual.imageUrl} />
                       <span>{itemAtual.title}</span>
                     </a>
                   </li>
