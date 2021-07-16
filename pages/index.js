@@ -27,7 +27,7 @@ function ProfileRelationsBox(propriedades) {
   return (
     <ProfileRelationsBoxWrapper>
       <h2 className="smallTitle">{propriedades.title}({propriedades.items.length})</h2>
-      <ul>
+      {/* <ul>
         {propriedades.items.map((itemAtual) => {
           return (
             <li key={itemAtual.id}>
@@ -38,7 +38,7 @@ function ProfileRelationsBox(propriedades) {
             </li>
           )
         })}
-      </ul>
+      </ul> */}
     </ProfileRelationsBoxWrapper>
   )
 }
