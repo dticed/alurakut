@@ -27,7 +27,7 @@ function ProfileRelationsBox(propriedades) {
   return (
     <ProfileRelationsBoxWrapper>
       <h2 className="smallTitle">{propriedades.title}({propriedades.items.length})</h2>
-      {/* <ul>
+      <ul>
         {propriedades.items.map((itemAtual) => {
           return (
             <li key={itemAtual.id}>
@@ -38,7 +38,7 @@ function ProfileRelationsBox(propriedades) {
             </li>
           )
         })}
-      </ul> */}
+      </ul>
     </ProfileRelationsBoxWrapper>
   )
 }
@@ -198,7 +198,7 @@ export default function Home(props) {
 export async function getServerSideProps(context) {
   const cookies = nookies.get(context);
   const token = cookies.USER_TOKEN;
-  const { githubUser } = jwt.decode(token);
+
 
   const { isAuthenticated } = await fetch('https://alurakut.vercel.app/api/auth', {
     headers: {
@@ -207,17 +207,15 @@ export async function getServerSideProps(context) {
   })
     .then((resposta) => resposta.json())
 
-  console.log('isAuthenticated: ' + isAuthenticated)
-
-  // if(!isAuthenticated) {
-  //   return {
-  //     redirect: {
-  //       destination: '/login',
-  //       permanent: false,
-  //     }
-  //   }
-  // }
-
+  if (!isAuthenticated) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      }
+    }
+  }
+  const { githubUser } = jwt.decode(token);
   return {
     props: {
       githubUser
