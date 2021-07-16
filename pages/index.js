@@ -215,6 +215,7 @@ export async function getServerSideProps(context) {
       }
     }
   }
+
   const { githubUser } = jwt.decode(token);
   return {
     props: {
