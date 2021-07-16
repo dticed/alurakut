@@ -207,14 +207,14 @@ export async function getServerSideProps(context) {
 
   console.log('isAuthenticated: ' + isAuthenticated)
 
-  // if(!isAuthenticated) {
-  //   return {
-  //     redirect: {
-  //       destination: '/login',
-  //       permanent: false,
-  //     }
-  //   }
-  // }
+  if(!isAuthenticated) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      }
+    }
+  }
 
   return {
     props: {
