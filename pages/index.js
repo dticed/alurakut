@@ -28,16 +28,16 @@ function ProfileRelationsBox(propriedades) {
     <ProfileRelationsBoxWrapper>
       <h2 className="smallTitle">{propriedades.title}({propriedades.items.length})</h2>
       <ul>
-        {/* {seguidores.map((itemAtual) => {
+        {propriedades.items.map((itemAtual) => {
           return (
-            <li key={itemAtual}>
-              <a href={`https://github.com/${itemAtual}.png`}>
-                <img src={itemAtual} />
-                <span>{itemAtual}</span>
+            <li key={itemAtual.id}>
+              <a href={itemAtual.html_url} target="_blank" rel="noopener noreferrer">
+                <img src={itemAtual.avatar_url} />
+                <span>{itemAtual.login}</span>
               </a>
             </li>
           )
-        })} */}
+        })}
       </ul>
     </ProfileRelationsBoxWrapper>
   )
@@ -153,13 +153,15 @@ export default function Home(props) {
           </Box>
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
+
           <ProfileRelationsBox items={seguidores} title="Seguidores" />
+
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Pessoas da comunidades({pessoasFavoritas.length})
             </h2>
             <ul>
-              {pessoasFavoritas.slice(0,6).map((itemAtual) => {
+              {pessoasFavoritas.slice(0, 6).map((itemAtual) => {
                 return (
                   <li key={itemAtual}>
                     <a href={`https://github.com/${itemAtual}`}>
@@ -175,7 +177,7 @@ export default function Home(props) {
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">Comunidades({comunidades.length})</h2>
             <ul>
-              {comunidades.slice(0,6).map((itemAtual) => {
+              {comunidades.slice(0, 6).map((itemAtual) => {
                 return (
                   <li key={itemAtual.id}>
                     <a href={`/communities/${itemAtual.title}`}>
@@ -203,7 +205,7 @@ export async function getServerSideProps(context) {
       Authorization: token
     }
   })
-  .then((resposta) => resposta.json())
+    .then((resposta) => resposta.json())
 
   console.log('isAuthenticated: ' + isAuthenticated)
 
