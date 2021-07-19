@@ -6,12 +6,11 @@ export default async function recebedorDeRequests(request, response) {
         const client = new SiteClient(TOKEN);
 
         const registroCriado = await client.items.create({
-            itemType: "967712", // ID do Model de comunidades criado pelo Dato
+            itemType: "978961", // ID do Model de Scraps criado pelo Dato
             ...request.body,
         })
 
         response.json({
-            dados: 'Algum dado qualquer',
             registroCriado: registroCriado,
         })
         return;

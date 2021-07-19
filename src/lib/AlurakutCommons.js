@@ -158,10 +158,10 @@ AlurakutMenu.Wrapper = styled.header`
             color: #ffffff;
             opacity: 1;
         }
-        } 
+        }
     }
     `;
-    AlurakutMenu.Logo = styled.img`
+AlurakutMenu.Logo = styled.img`
     background-color: #ffffff;
     padding: 9px 14px;
     border-radius: 1000px;
@@ -198,7 +198,7 @@ export function AlurakutProfileSidebarMenuDefault() {
                     <img src={`${BASE_URL}/icons/user.svg`} />
                     Perfil
                 </a>
-                <a href="/">
+                <a href="/scrapsPage">
                     <img src={`${BASE_URL}/icons/book.svg`} />
                     Recados
                 </a>
@@ -342,7 +342,7 @@ const AlurakutLoginScreen = css`
     }
 
 
-    .loginScreen {
+    .loginScreen, .logoutScreen {
         padding: 16px;
         max-width: 1110px;
         display: grid;
@@ -502,6 +502,43 @@ export const AlurakutStyles = css`
         &:hover,
         &:focus {
         box-shadow: 0px 0px 5px #33333357;
+        }
+    }
+
+    textarea {
+        width: 550px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        @media(max-width: 860px) {
+            width: 436px;
+        }
+    }
+
+    input.userScrap {
+        width: 40%;
+    }
+    
+    .scrapBox {
+        width: 586px;
+        padding: 0px;
+        @media(max-width: 860px) {
+            width: 468px;
+        }
+        
+        img {
+            object-fit: cover;
+            background-position: center center;
+            max-width: 100%;
+            position: relative;
+        }
+        ul {
+            
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: auto;
+        }
+        li {
+            max-width: 400px;
+            word-wrap: break-word;
         }
     }
 

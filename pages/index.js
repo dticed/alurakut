@@ -43,6 +43,10 @@ function ProfileRelationsBox(propriedades) {
   )
 }
 
+// function verifyAuthentication(verification) {
+
+// }
+
 export default function Home(props) {
   const usuarioAleatorio = props.githubUser;
   const [comunidades, setComunidades] = React.useState([]);
