@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 export default function LoginScreen() {
     const router = new useRouter();
-    const [githubUser, setGithubUser] = React.useState('dticed');
+    const [githubUser, setGithubUser] = React.useState('');
 
     return (
         <main style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>

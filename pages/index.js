@@ -43,6 +43,17 @@ function ProfileRelationsBox(propriedades) {
   )
 }
 
+function verifyAuthentication(verification) {
+  if (!verification) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      }
+    }
+  }
+}
+
 export default function Home(props) {
   const usuarioAleatorio = props.githubUser;
   const [comunidades, setComunidades] = React.useState([]);
@@ -207,14 +218,7 @@ export async function getServerSideProps(context) {
   })
     .then((resposta) => resposta.json())
 
-  if (!isAuthenticated) {
-    return {
-      redirect: {
-        destination: '/login',
-        permanent: false,
-      }
-    }
-  }
+  verifyAuthentication(isAuthenticated);
 
   const { githubUser } = jwt.decode(token);
   return {

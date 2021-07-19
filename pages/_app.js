@@ -11,9 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: sans-serif;
-    background-image: url('https://static.poder360.com.br/2020/05/SENADO-FEDERAL-FOTO-2.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-color: #D9E6F6;
   }
 
   #__next {
