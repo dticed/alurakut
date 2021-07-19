@@ -520,7 +520,7 @@ export const AlurakutStyles = css`
     
     .scrapBox {
         width: 586px;
-        padding: 0;
+        padding: 0px;
         @media(max-width: 860px) {
             width: 468px;
         }
