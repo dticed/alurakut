@@ -538,7 +538,7 @@ export const AlurakutStyles = css`
         }
         li {
             max-width: 400px;
-            word-wrap: break-word
+            word-wrap: break-word;
         }
     }
 
