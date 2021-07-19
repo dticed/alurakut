@@ -218,7 +218,7 @@ export async function getServerSideProps(context) {
   })
     .then((resposta) => resposta.json())
 
-  //verifyAuthentication(isAuthenticated);
+  verifyAuthentication(isAuthenticated);
 
   const { githubUser } = jwt.decode(token);
   return {
